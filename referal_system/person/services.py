@@ -132,6 +132,8 @@ def implement_invite(request, invite_code: str) -> dict:
     """ Implement foreign invite code for current user """
     self_person = get_person_by_request(request)
     owner_invite_person = check_user_by_invite_code(invite_code)
+    if self_person is owner_invite_person:
+        return {'error': 'invite code must be foreign'}
     if not owner_invite_person:
         return {'error': 'invite code does not exist'}
     if not owner_invite_person.is_active:
