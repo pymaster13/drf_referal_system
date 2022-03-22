@@ -55,10 +55,10 @@ class Invite(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE,
                               related_name='owner_invite',
                               verbose_name='Owner of invite code')
-    invited = models.ForeignKey(User, unique=True,
-                                on_delete=models.CASCADE,
-                                related_name='invited_person',
-                                verbose_name='Invited person')
+    invited = models.OneToOneField(User, 
+                                   on_delete=models.CASCADE,
+                                   related_name='invited_person',
+                                   verbose_name='Invited person')
 
     def __str__(self) -> str:
         return f'Owner: {self.owner}, Invited: {self.invited}'
