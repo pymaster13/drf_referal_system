@@ -51,4 +51,4 @@ URLs:
 - doc/ - get project documentation with all endpoints.
 
 
-Pythonanywhere: http://pymaster13.pythonanywhere.com/ (user database is SQLite because PGSQL is only allowed in paid account).
+Pythonanywhere: http://pymaster13.pythonanywhere.com/ (used database SQLite because PGSQL is only allowed in paid account).
